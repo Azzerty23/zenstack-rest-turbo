@@ -18,6 +18,9 @@
       "dependsOn": ["^build", "^db:generate"],
       "outputs": [".next/**", ".expo/**"]
     },
+    "start": {
+      "dependsOn": ["build"]
+    },
     "lint": {},
     "lint:fix": {},
     "clean": {
@@ -29,7 +32,12 @@
     "type-check": {
       "dependsOn": ["^db:generate"],
       "cache": false
-    }
+    },
+    "zen:generate": {
+      "outputs": ["**/generated/**"]
+    },
+    "zen:up": {},
+    "zen:upgrade": {}
   },
   "globalEnv": [
     "CI",
@@ -42,6 +50,8 @@
     "NODE_ENV",
     "SKIP_ENV_VALIDATION",
     "VERCEL",
-    "VERCEL_URL"
+    "VERCEL_URL",
+    "SWAGGER_USERNAME",
+    "SWAGGER_PASSWORD"
   ]
 }

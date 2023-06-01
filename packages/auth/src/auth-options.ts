@@ -1,10 +1,9 @@
+import { prisma } from "@mct/db";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { type DefaultSession, type NextAuthOptions } from "next-auth";
-import DiscordProvider from "next-auth/providers/discord";
+import CredentialsProvider from "next-auth/providers/credentials";
 
-import { prisma } from "@acme/db";
-
-import { env } from "../env.mjs";
+import { loginOrSignin } from "./authorize";
 
 /**
  * Module augmentation for `next-auth` types
@@ -16,9 +15,10 @@ declare module "next-auth" {
   interface Session extends DefaultSession {
     user: {
       id: string;
+      name: string;
+      email: string;
       // ...other properties
-      // role: UserRole;
-    } & DefaultSession["user"];
+    };
   }
 
   // interface User {
@@ -33,29 +33,56 @@ declare module "next-auth" {
  * @see https://next-auth.js.org/configuration/options
  **/
 export const authOptions: NextAuthOptions = {
+  session: {
+    strategy: "jwt",
+  },
+  // Include user.id on session
   callbacks: {
-    session({ session, user }) {
+    session: async ({ session, token }) => {
       if (session.user) {
-        session.user.id = user.id;
-        // session.user.role = user.role; <-- put other properties on the session here
+        const user = await prisma.user.findUniqueOrThrow({
+          where: { id: token.sub },
+        });
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        session.user.id = token.sub!;
+        // session.user.role = user.role; // <-- put other properties on the session here
       }
       return session;
     },
   },
+  // Customize pages redirect behavior
+  pages: {
+    signIn: "/login",
+    error: "/api/auth/error",
+  },
+  // Configure one or more authentication providers
   adapter: PrismaAdapter(prisma),
   providers: [
-    DiscordProvider({
-      clientId: env.DISCORD_CLIENT_ID,
-      clientSecret: env.DISCORD_CLIENT_SECRET,
+    CredentialsProvider({
+      type: "credentials",
+      credentials: {
+        name: { label: "Name", type: "text", placeholder: "Your name" },
+        email: { type: "email" },
+        password: { type: "password" },
+      },
+      authorize: loginOrSignin(prisma),
     }),
-    /**
-     * ...add more providers here
-     *
-     * Most other providers require a bit more work than the Discord provider.
-     * For example, the GitHub provider requires you to add the
-     * `refresh_token_expires_in` field to the Account model. Refer to the
-     * NextAuth.js docs for the provider you want to use. Example:
-     * @see https://next-auth.js.org/providers/github
-     **/
+    //     GoogleProvider({
+    //       clientId: process.env.GOOGLE_CLIENT_ID as string,
+    //       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+    //     }),
+    //     DiscordProvider({
+    //       clientId: process.env.DISCORD_CLIENT_ID as string,
+    //       clientSecret: process.env.DISCORD_CLIENT_SECRET as string,
+    //     }),
+    //     /**
+    //      * ...add more providers here
+    //      *
+    //      * Most other providers require a bit more work than the Discord provider.
+    //      * For example, the GitHub provider requires you to add the
+    //      * `refresh_token_expires_in` field to the Account model. Refer to the
+    //      * NextAuth.js docs for the provider you want to use. Example:
+    //      * @see https://next-auth.js.org/providers/github
+    //      **/
   ],
 };

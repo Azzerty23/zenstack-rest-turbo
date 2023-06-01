@@ -9,14 +9,19 @@
     "db:generate": "pnpm with-env prisma generate",
     "db:push": "pnpm with-env prisma db push --skip-generate",
     "dev": "pnpm with-env prisma studio --port 5556",
-    "with-env": "dotenv -e ../../.env --"
+    "with-env": "dotenv -e ../../.env --",
+    "zen:generate": "npx zenstack generate --schema ./zmodels/schema.zmodel"
   },
   "dependencies": {
-    "@prisma/client": "^4.14.1"
+    "@prisma/client": "^4.14.1",
+    "@zenstackhq/runtime": "1.0.0-alpha.119"
   },
   "devDependencies": {
+    "@zenstackhq/openapi": "1.0.0-alpha.119",
+    "@zenstackhq/trpc": "1.0.0-alpha.119",
     "dotenv-cli": "^7.2.1",
     "prisma": "^4.14.1",
-    "typescript": "^5.0.4"
+    "typescript": "^5.0.4",
+    "zenstack": "1.0.0-alpha.119"
   }
 }

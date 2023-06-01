@@ -13,6 +13,13 @@ type GetServerSessionContext =
       res: GetServerSidePropsContext["res"];
     }
   | { req: NextApiRequest; res: NextApiResponse };
+
+/**
+ * Wrapper for next-auth `getServerSession` so that you don't need to import the
+ * `authOptions` in every file.
+ *
+ * @see https://next-auth.js.org/configuration/nextjs
+ **/
 export const getServerSession = (ctx: GetServerSessionContext) => {
   return $getServerSession(ctx.req, ctx.res, authOptions);
 };
