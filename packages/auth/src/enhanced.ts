@@ -1,7 +1,7 @@
 import { type GetServerSidePropsContext } from "next";
 import { withPresets } from "@zenstackhq/runtime";
 
-import { prisma } from "@mct/db";
+import { prisma } from "@acme/db";
 
 import { getServerSession } from "./get-session";
 

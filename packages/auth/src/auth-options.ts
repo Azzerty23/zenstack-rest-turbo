@@ -1,7 +1,8 @@
-import { prisma } from "@mct/db";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { type DefaultSession, type NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+
+import { prisma } from "@acme/db";
 
 import { loginOrSignin } from "./authorize";
 
@@ -38,11 +39,11 @@ export const authOptions: NextAuthOptions = {
   },
   // Include user.id on session
   callbacks: {
-    session: async ({ session, token }) => {
+    session: ({ session, token }) => {
       if (session.user) {
-        const user = await prisma.user.findUniqueOrThrow({
-          where: { id: token.sub },
-        });
+        // const user = await prisma.user.findUniqueOrThrow({
+        //   where: { id: token.sub },
+        // });
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         session.user.id = token.sub!;
         // session.user.role = user.role; // <-- put other properties on the session here

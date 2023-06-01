@@ -1,6 +1,6 @@
 import { compare } from "bcryptjs";
 
-import type { PrismaClient } from "@mct/db";
+import type { PrismaClient } from "@acme/db";
 
 export function loginOrSignin(prisma: PrismaClient) {
   return async (

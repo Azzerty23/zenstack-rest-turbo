@@ -19,13 +19,13 @@
     "@types/express": "^4.17.17",
     "@types/jsonwebtoken": "^9.0.1",
     "copyfiles": "^2.4.1",
-    "dotenv-cli": "^7.1.0",
+    "dotenv-cli": "^7.2.1",
     "tsx": "^3.12.6",
-    "typescript": "^5.0.3"
+    "typescript": "^5.0.4"
   },
   "dependencies": {
-    "@acme/db": "workspace:*",
-    "@acme/auth": "workspace:*",
+    "@acme/auth": "0.1.0",
+    "@acme/db": "0.1.0",
     "@zenstackhq/runtime": "1.0.0-alpha.119",
     "@zenstackhq/server": "1.0.0-alpha.119",
     "cors": "^2.8.5",

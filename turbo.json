@@ -15,7 +15,7 @@
       "cache": false
     },
     "build": {
-      "dependsOn": ["^build", "^db:generate"],
+      "dependsOn": ["^build", "^zen:generate"],
       "outputs": [".next/**", ".expo/**"]
     },
     "start": {
@@ -30,7 +30,7 @@
       "cache": false
     },
     "type-check": {
-      "dependsOn": ["^db:generate"],
+      "dependsOn": ["^zen:generate"],
       "cache": false
     },
     "zen:generate": {
