@@ -6412,6 +6412,7 @@
               "attributes": {
                 "type": "object",
                 "required": [
+                  "email",
                   "password"
                 ],
                 "properties": {
