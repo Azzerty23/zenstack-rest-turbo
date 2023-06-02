@@ -26,8 +26,8 @@
   "dependencies": {
     "@acme/auth": "0.1.0",
     "@acme/db": "0.1.0",
-    "@zenstackhq/runtime": "1.0.0-alpha.119",
-    "@zenstackhq/server": "1.0.0-alpha.119",
+    "@zenstackhq/runtime": "1.0.0-alpha.122",
+    "@zenstackhq/server": "1.0.0-alpha.122",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.0"

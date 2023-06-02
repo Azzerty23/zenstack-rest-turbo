@@ -151,11 +151,11 @@ importers:
         specifier: 0.1.0
         version: link:../../packages/db
       '@zenstackhq/runtime':
-        specifier: 1.0.0-alpha.119
-        version: 1.0.0-alpha.119(@prisma/client@4.14.1)
+        specifier: 1.0.0-alpha.122
+        version: 1.0.0-alpha.122(@prisma/client@4.14.1)
       '@zenstackhq/server':
-        specifier: 1.0.0-alpha.119
-        version: 1.0.0-alpha.119(@prisma/client@4.14.1)
+        specifier: 1.0.0-alpha.122
+        version: 1.0.0-alpha.122(@prisma/client@4.14.1)
       cors:
         specifier: ^2.8.5
         version: 2.8.5
@@ -415,15 +415,15 @@ importers:
         specifier: ^4.14.1
         version: 4.14.1(prisma@4.14.1)
       '@zenstackhq/runtime':
-        specifier: 1.0.0-alpha.119
-        version: 1.0.0-alpha.119(@prisma/client@4.14.1)
+        specifier: 1.0.0-alpha.122
+        version: 1.0.0-alpha.122(@prisma/client@4.14.1)
     devDependencies:
       '@zenstackhq/openapi':
-        specifier: 1.0.0-alpha.119
-        version: 1.0.0-alpha.119(@prisma/client@4.14.1)
+        specifier: 1.0.0-alpha.122
+        version: 1.0.0-alpha.122(@prisma/client@4.14.1)
       '@zenstackhq/trpc':
-        specifier: 1.0.0-alpha.119
-        version: 1.0.0-alpha.119
+        specifier: 1.0.0-alpha.122
+        version: 1.0.0-alpha.122(@prisma/client@4.14.1)
       dotenv-cli:
         specifier: ^7.2.1
         version: 7.2.1
@@ -434,8 +434,8 @@ importers:
         specifier: ^5.0.4
         version: 5.0.4
       zenstack:
-        specifier: 1.0.0-alpha.119
-        version: 1.0.0-alpha.119(prisma@4.14.1)
+        specifier: 1.0.0-alpha.122
+        version: 1.0.0-alpha.122(@prisma/client@4.14.1)(prisma@4.14.1)
 
 packages:
 
@@ -3788,17 +3788,17 @@ packages:
     resolution: {integrity: sha512-hb9QhOg5MGmpVkFcoZ9XJMe1em5gd0e2eqqjK87O1dwULedXsnY/Zg/Ju6lcohA+t6jVkmKpe7I1etqhvdRdrQ==}
     engines: {node: '>=10.0.0'}
 
-  /@zenstackhq/language@1.0.0-alpha.119:
-    resolution: {integrity: sha512-o/OVrnwQ5PPJrbaVBdt1qJWS5K0XAyiGATmrppXUWoNxkHRvfDMlYUpmNI1wkE3cmXn3TGjBE0gsaJszPGB+iQ==}
+  /@zenstackhq/language@1.0.0-alpha.122:
+    resolution: {integrity: sha512-LgOG84j/lQ6sMOuAVLZ0NqMR+Ppt+7ijUdKf1Qaxlq5LaT/tnePxJdvbaVzDk9Wn1SIEKao5/LA7qFxuKQJVoQ==}
     dependencies:
       langium: 1.2.0
 
-  /@zenstackhq/openapi@1.0.0-alpha.119(@prisma/client@4.14.1):
-    resolution: {integrity: sha512-LSwjsGQnfkGpvqjIya7lw1Mqd+7MUHsQPA22GqMSqBm6C3vMN/Gc7gl3WYyYwHbzRxkpklzfjhkumAR8D8Lg2w==}
+  /@zenstackhq/openapi@1.0.0-alpha.122(@prisma/client@4.14.1):
+    resolution: {integrity: sha512-zB9mysMDdE425N/ftywNzczIk1wif22KThR6QB8/XGxhP0acyJVfmaKLuwITV+lunlWmGPQeHrMuX0sXw+SlVg==}
     dependencies:
       '@prisma/generator-helper': 4.14.1
-      '@zenstackhq/runtime': 1.0.0-alpha.119(@prisma/client@4.14.1)
-      '@zenstackhq/sdk': 1.0.0-alpha.119
+      '@zenstackhq/runtime': 1.0.0-alpha.122(@prisma/client@4.14.1)
+      '@zenstackhq/sdk': 1.0.0-alpha.122(@prisma/client@4.14.1)
       change-case: 4.1.2
       lower-case-first: 2.0.2
       openapi-types: 12.1.3
@@ -3810,15 +3810,14 @@ packages:
       - '@prisma/client'
       - supports-color
 
-  /@zenstackhq/runtime@1.0.0-alpha.119(@prisma/client@4.14.1):
-    resolution: {integrity: sha512-y+zOY4ihcm5i4PmX23qD5sBonHDDLig0fBKlgCAKQ8GFLLRbcgnq+X0p3xUB3bqs39kZeuERUMbwkMBlgrDkaw==}
+  /@zenstackhq/runtime@1.0.0-alpha.122(@prisma/client@4.14.1):
+    resolution: {integrity: sha512-dYT/x1F0kBLFlqKZ52PlEfS4uTbFSN49Z4dyUWhBfixsi+r8Sq37ICIBcGAekJ0RoPmJ3a2uRwoUfwzoNZbuPQ==}
     peerDependencies:
       '@prisma/client': ^4.0.0
     dependencies:
       '@paralleldrive/cuid2': 2.2.0
       '@prisma/client': 4.14.1(prisma@4.14.1)
       '@types/bcryptjs': 2.4.2
-      '@zenstackhq/sdk': 1.0.0-alpha.119
       bcryptjs: 2.4.3
       change-case: 4.1.2
       colors: 1.4.0
@@ -3830,25 +3829,24 @@ packages:
       tslib: 2.5.0
       zod: 3.21.1
       zod-validation-error: 0.2.2(zod@3.21.1)
-    transitivePeerDependencies:
-      - supports-color
 
-  /@zenstackhq/sdk@1.0.0-alpha.119:
-    resolution: {integrity: sha512-mNvcwD0O/yK3DWEEu0KumSOZsfQuXDujzmUL+YHMkQIsBFui1cKCFhirND39NUh0WA/PuB4i0AUpMh/80QGuuw==}
+  /@zenstackhq/sdk@1.0.0-alpha.122(@prisma/client@4.14.1):
+    resolution: {integrity: sha512-flnTfnMvioDMf2s1D/QWNDgnOpZnj1DL7NNLCGTtY66hXH/Ah4swpYSIKCTFMvO1Cc77JzT/QlV15zQyrQs9PA==}
     dependencies:
       '@prisma/generator-helper': 4.14.1
-      '@zenstackhq/language': 1.0.0-alpha.119
+      '@zenstackhq/language': 1.0.0-alpha.122
+      '@zenstackhq/runtime': 1.0.0-alpha.122(@prisma/client@4.14.1)
       prettier: 2.8.8
       ts-morph: 16.0.0
     transitivePeerDependencies:
+      - '@prisma/client'
       - supports-color
 
-  /@zenstackhq/server@1.0.0-alpha.119(@prisma/client@4.14.1):
-    resolution: {integrity: sha512-HIvuKwhk4NPBvlP0BJHcdcJFxY0oaHPQpbw8DkQW3FNRSx8mXH5FbdXnC/uyDz9soA1dgFzDPO+6BTm/GRqdBA==}
+  /@zenstackhq/server@1.0.0-alpha.122(@prisma/client@4.14.1):
+    resolution: {integrity: sha512-jbE4NXPt5f3qCbXdPEsaWXcOUFt/liCkZOYK9CYPCMANnrfkwIVCTE4PrfU8kOziQs/XLZEBUHO2950gpQtd8A==}
     dependencies:
-      '@zenstackhq/openapi': 1.0.0-alpha.119(@prisma/client@4.14.1)
-      '@zenstackhq/runtime': 1.0.0-alpha.119(@prisma/client@4.14.1)
-      '@zenstackhq/sdk': 1.0.0-alpha.119
+      '@zenstackhq/openapi': 1.0.0-alpha.122(@prisma/client@4.14.1)
+      '@zenstackhq/runtime': 1.0.0-alpha.122(@prisma/client@4.14.1)
       change-case: 4.1.2
       lower-case-first: 2.0.2
       superjson: 1.12.3
@@ -3863,12 +3861,12 @@ packages:
       - supports-color
     dev: false
 
-  /@zenstackhq/trpc@1.0.0-alpha.119:
-    resolution: {integrity: sha512-kY6rZwUYxtAqN/j+SoWDBZnnWrVty541sD5je1YhjazQVyHoFrG4QMepEaNYR6VJz/vrXKaMXTuQC7r7P7Lifw==}
+  /@zenstackhq/trpc@1.0.0-alpha.122(@prisma/client@4.14.1):
+    resolution: {integrity: sha512-BLbO46+wEa62hb4Ud+hGjToi8xZNndnQ0UDwuFcX3xoShqIpy63BbpeeRZEUHPYbl15tGveoHyQkH8MG6yXx8w==}
     dependencies:
       '@prisma/generator-helper': 4.14.1
       '@prisma/internals': 4.14.1
-      '@zenstackhq/sdk': 1.0.0-alpha.119
+      '@zenstackhq/sdk': 1.0.0-alpha.122(@prisma/client@4.14.1)
       change-case: 4.1.2
       lower-case-first: 2.0.2
       prettier: 2.8.8
@@ -3876,6 +3874,7 @@ packages:
       tslib: 2.5.0
       zod: 3.21.1
     transitivePeerDependencies:
+      - '@prisma/client'
       - encoding
       - supports-color
     dev: true
@@ -12466,8 +12465,8 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
-  /zenstack@1.0.0-alpha.119(prisma@4.14.1):
-    resolution: {integrity: sha512-t+VfkqgEWGoUNm9phTcUDBRXvwJ1F4F4oJB7bN9Upa5cookD7xaWoamwQJoWpHsxwhMnYVhEtuF19OgPNQT3vA==}
+  /zenstack@1.0.0-alpha.122(@prisma/client@4.14.1)(prisma@4.14.1):
+    resolution: {integrity: sha512-Li+IDvMqUf5BY/Z2/SUX4rRyBGSjwvwkmJ3hyH2Q3it9B6Ftj59qrjM0vO7sMJ+RMosbRQa/WffwgwGkmbvipQ==}
     engines: {vscode: ^1.56.0}
     hasBin: true
     requiresBuild: true
@@ -12477,8 +12476,8 @@ packages:
       '@paralleldrive/cuid2': 2.2.0
       '@prisma/generator-helper': 4.14.1
       '@prisma/internals': 4.14.1
-      '@zenstackhq/language': 1.0.0-alpha.119
-      '@zenstackhq/sdk': 1.0.0-alpha.119
+      '@zenstackhq/language': 1.0.0-alpha.122
+      '@zenstackhq/sdk': 1.0.0-alpha.122(@prisma/client@4.14.1)
       async-exit-hook: 2.0.1
       change-case: 4.1.2
       colors: 1.4.0
@@ -12505,6 +12504,7 @@ packages:
       zod: 3.21.1
       zod-validation-error: 0.2.2(zod@3.21.1)
     transitivePeerDependencies:
+      - '@prisma/client'
       - encoding
       - supports-color
     dev: true

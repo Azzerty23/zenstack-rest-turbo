@@ -36,7 +36,11 @@ model Account {
   session_state     String?
   user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
+  zenstack_guard       Boolean @default(true)
+  zenstack_transaction String?
+
   @@unique([provider, providerAccountId])
+  @@index([zenstack_transaction])
 }
 
 model Session {
@@ -45,6 +49,11 @@ model Session {
   userId       String
   expires      DateTime
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  zenstack_guard       Boolean @default(true)
+  zenstack_transaction String?
+
+  @@index([zenstack_transaction])
 }
 
 /// @@allow('create,read', true)

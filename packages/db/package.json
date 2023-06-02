@@ -14,14 +14,14 @@
   },
   "dependencies": {
     "@prisma/client": "^4.14.1",
-    "@zenstackhq/runtime": "1.0.0-alpha.119"
+    "@zenstackhq/runtime": "1.0.0-alpha.122"
   },
   "devDependencies": {
-    "@zenstackhq/openapi": "1.0.0-alpha.119",
-    "@zenstackhq/trpc": "1.0.0-alpha.119",
+    "@zenstackhq/openapi": "1.0.0-alpha.122",
+    "@zenstackhq/trpc": "1.0.0-alpha.122",
     "dotenv-cli": "^7.2.1",
     "prisma": "^4.14.1",
     "typescript": "^5.0.4",
-    "zenstack": "1.0.0-alpha.119"
+    "zenstack": "1.0.0-alpha.122"
   }
 }

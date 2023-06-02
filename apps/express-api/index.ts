@@ -30,8 +30,9 @@ const app: express.Application = express();
 // allow CORS
 app.use(cors());
 
-// enable JSON body parser
+// enable JSON and JSON:API body parser
 app.use(express.json());
+app.use(express.json({ type: "application/vnd.api+json" }));
 
 /**
  * Login input
@@ -57,6 +58,9 @@ app.use(express.json());
  */
 app.post("/api/login", async (req: Request, res: Response) => {
   const { email, password = "" } = req.body;
+  console.log("req.body:", req.body);
+  console.log("email:", email);
+  console.log("password:", password);
   const user = await prisma.user.findFirst({
     where: { email },
   });
