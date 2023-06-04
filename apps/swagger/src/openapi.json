@@ -214,8 +214,7 @@
               }
             }
           }
-        },
-        "security": []
+        }
       },
       "post": {
         "operationId": "create-Post",
@@ -253,8 +252,7 @@
               }
             }
           }
-        },
-        "security": []
+        }
       }
     },
     "/api/post/{id}": {
@@ -303,8 +301,7 @@
               }
             }
           }
-        },
-        "security": []
+        }
       },
       "put": {
         "operationId": "update-Post-put",
@@ -357,8 +354,7 @@
               }
             }
           }
-        },
-        "security": []
+        }
       },
       "patch": {
         "operationId": "update-Post-patch",
@@ -411,8 +407,7 @@
               }
             }
           }
-        },
-        "security": []
+        }
       },
       "delete": {
         "operationId": "delete-Post",
@@ -449,8 +444,7 @@
               }
             }
           }
-        },
-        "security": []
+        }
       }
     },
     "/api/account": {

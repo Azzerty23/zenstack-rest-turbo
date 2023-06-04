@@ -38,8 +38,8 @@ model Post {
     title   String
     content String
 
-    // full access for all
-    @@allow('all', true)
+    // full access for authenticated users
+    @@allow('all', auth() != null)
 }
 
 // NextAuth.js Models

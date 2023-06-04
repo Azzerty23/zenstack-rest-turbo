@@ -5,9 +5,9 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "pnpm with-env tsx watch index.ts",
+    "dev": "pnpm with-env tsx watch src/index.ts",
     "start": "pnpm with-env node dist/index.js",
-    "build": "pnpm with-env esbuild index.ts --bundle --platform=node --target=node14 --outfile=dist/index.js && copyfiles -f '../../packages/db/prisma/schema.prisma' dist/ ",
+    "build": "pnpm with-env esbuild src/index.ts --bundle --platform=node --target=node14 --outfile=dist/index.js && copyfiles -f '../../packages/db/prisma/schema.prisma' dist/ && copyfiles '../../node_modules/.prisma/**' ./dist/node_modules/.prisma && copyfiles '../../node_modules/@prisma/client/runtime/**' ./dist/node_modules/",
     "type-check": "tsc --noEmit",
     "with-env": "dotenv -e ../../.env --"
   },
@@ -26,6 +26,7 @@
   "dependencies": {
     "@acme/auth": "0.1.0",
     "@acme/db": "0.1.0",
+    "@prisma/client": "^4.14.1",
     "@zenstackhq/runtime": "1.0.0-alpha.122",
     "@zenstackhq/server": "1.0.0-alpha.122",
     "cors": "^2.8.5",

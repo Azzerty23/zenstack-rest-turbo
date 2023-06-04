@@ -14,11 +14,16 @@ generator client {
   output          = "../../../node_modules/.prisma/client"
 }
 
-/// @@allow('all', true)
+/// @@allow('all', auth() != null)
 model Post {
   id      String @id() @default(cuid())
   title   String
   content String
+
+  zenstack_guard       Boolean @default(true)
+  zenstack_transaction String?
+
+  @@index([zenstack_transaction])
 }
 
 model Account {

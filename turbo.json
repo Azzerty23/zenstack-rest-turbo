@@ -19,7 +19,8 @@
       "outputs": [".next/**", ".expo/**"]
     },
     "start": {
-      "dependsOn": ["build"]
+      "persistent": true,
+      "cache": false
     },
     "lint": {},
     "lint:fix": {},

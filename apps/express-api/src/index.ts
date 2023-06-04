@@ -58,9 +58,6 @@ app.use(express.json({ type: "application/vnd.api+json" }));
  */
 app.post("/api/login", async (req: Request, res: Response) => {
   const { email, password = "" } = req.body;
-  console.log("req.body:", req.body);
-  console.log("email:", email);
-  console.log("password:", password);
   const user = await prisma.user.findFirst({
     where: { email },
   });

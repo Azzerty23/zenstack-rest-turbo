@@ -24,7 +24,7 @@ const swaggerOptions = {
     version: "0.1.0",
     title: "Minerva CT external API",
   },
-  filesPattern: "../../express-api/index.ts", // scan app.ts for OpenAPI JSDoc
+  filesPattern: "../../express-api/src/index.ts", // scan app.ts for OpenAPI JSDoc
   baseDir: __dirname,
   servers: [
     {
