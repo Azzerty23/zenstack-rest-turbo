@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "pnpm with-env tsx watch src/index.ts",
     "start": "pnpm with-env node dist/index.js",
-    "build": "pnpm with-env esbuild src/index.ts --bundle --platform=node --target=node14 --outfile=dist/index.js && copyfiles -f '../../packages/db/prisma/schema.prisma' dist/ && copyfiles '../../node_modules/.prisma/**' ./dist/node_modules/.prisma && copyfiles '../../node_modules/@prisma/client/runtime/**' ./dist/node_modules/",
+    "build": "pnpm with-env esbuild src/index.ts --bundle --platform=node --target=node14 --outfile=dist/index.js && copyfiles -f '../../packages/db/prisma/schema.prisma' dist/",
     "type-check": "tsc --noEmit",
     "with-env": "dotenv -e ../../.env --"
   },
